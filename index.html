@@ -3,31 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Tic Tac Toe</title>
+    <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="background-blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
-
     <div class="container">
-        <header>
-            <h1>Tic Tac Toe</h1>
-            <div class="mode-selector">
-                <button id="pvp-btn" class="active">P v P</button>
-                <button id="pva-btn">P v AI</button>
-            </div>
-        </header>
+        <h1>Tic Tac Toe</h1>
 
-        <div class="game-info">
-            <div class="status" id="status">Player X's Turn</div>
+        <div class="mode-selector">
+            <button id="pvp-btn" class="active">P v P</button>
+            <button id="pva-btn">P v AI</button>
         </div>
+
+        <div class="status" id="status">Player X's Turn</div>
 
         <div class="board" id="board">
             <div class="cell" data-index="0"></div>
@@ -42,9 +30,7 @@
             <div class="winning-line" id="winning-line"></div>
         </div>
 
-        <div class="controls">
-            <button id="restart-btn">Restart Game</button>
-        </div>
+        <button id="restart-btn">Restart Game</button>
     </div>
 
     <script src="script.js"></script>

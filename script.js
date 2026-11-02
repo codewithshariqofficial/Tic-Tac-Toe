@@ -9,12 +9,12 @@ const winningLine = document.getElementById('winning-line');
 let currentPlayer = 'X';
 let gameActive = true;
 let gameState = ["", "", "", "", "", "", "", "", ""];
-let gameMode = 'pvp'; // 'pvp' or 'pva'
+let gameMode = 'pvp';
 
 const winningConditions = [
-    [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
-    [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
-    [0, 4, 8], [2, 4, 6]             // Diagonals
+    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+    [0, 4, 8], [2, 4, 6]
 ];
 
 function handleCellClick(clickedCellEvent) {
@@ -24,18 +24,18 @@ function handleCellClick(clickedCellEvent) {
     if (gameState[clickedCellIndex] !== "" || !gameActive) return;
 
     makeMove(clickedCell, clickedCellIndex);
-    
+
     if (gameActive && gameMode === 'pva' && currentPlayer === 'O') {
-        setTimeout(makeAiMove, 500);
+        setTimeout(makeAiMove, 300);
     }
 }
 
 function makeMove(cell, index) {
     gameState[index] = currentPlayer;
     cell.classList.add(currentPlayer.toLowerCase());
-    
+
     checkResult();
-    
+
     if (gameActive) {
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
         statusText.innerText = `Player ${currentPlayer}'s Turn`;
@@ -77,7 +77,7 @@ function checkResult() {
 function drawWinningLine(condition) {
     const firstCell = cells[condition[0]];
     const lastCell = cells[condition[2]];
-    
+
     const firstRect = firstCell.getBoundingClientRect();
     const lastRect = lastCell.getBoundingClientRect();
     const boardRect = board.getBoundingClientRect();
@@ -107,13 +107,12 @@ function restartGame() {
     winningLine.style.display = 'none';
 }
 
-// AI Logic (Minimax)
 function makeAiMove() {
     if (!gameActive) return;
-    
+
     let bestScore = -Infinity;
     let move;
-    
+
     for (let i = 0; i < 9; i++) {
         if (gameState[i] === "") {
             gameState[i] = 'O';
@@ -125,7 +124,7 @@ function makeAiMove() {
             }
         }
     }
-    
+
     const cell = document.querySelector(`.cell[data-index="${move}"]`);
     makeMove(cell, move);
 }
@@ -172,7 +171,6 @@ function checkWinner(state) {
     return null;
 }
 
-// Event Listeners
 cells.forEach(cell => cell.addEventListener('click', handleCellClick));
 restartBtn.addEventListener('click', restartGame);
 
