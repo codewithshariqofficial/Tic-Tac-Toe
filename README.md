@@ -4,7 +4,7 @@ A simple Tic Tac Toe game built with vanilla HTML, CSS, and JavaScript. Play aga
 
 ## About
 
-This is a fully client-side Tic Tac Toe game with a clean, simple UI. It runs directly in the browser with no build tools, frameworks, or dependencies — just open `index.html` and play.
+This is a fully client-side Tic Tac Toe game with a clean, simple UI. It runs directly in the browser with no build tools, frameworks, or dependencies - just open `index.html` and play.
 
 ## Features
 
@@ -18,61 +18,40 @@ This is a fully client-side Tic Tac Toe game with a clean, simple UI. It runs di
 
 1. Open the game in your browser.
 2. Choose a mode:
-   - **P v P** — two players take turns on the same device.
-   - **P v AI** — you play as **X** and the computer plays as **O**.
+   - P v P - two players take turns on the same device.
+   - P v AI - you play as X and the computer plays as O.
 3. Click any empty cell to place your mark.
 4. The first player to line up three marks in a row, column, or diagonal wins.
 5. If all nine cells are filled with no winner, the game ends in a draw.
-6. Click **Restart Game** to play again.
 
 ## Tech Stack
 
-| Technology | Purpose |
-| ---------- | ------- |
-| HTML5 | Page structure and game board |
-| CSS3 | Styling and responsive layout |
-| JavaScript (ES6) | Game logic, win detection, and Minimax AI |
+- HTML5
+- CSS3
+- Vanilla JavaScript
 
 ## Project Structure
 
 ```
 Tic-Tac-Toe/
-├── index.html    # Page structure and game board
-├── style.css     # Styling and responsive rules
-├── script.js     # Game logic and Minimax AI
-└── README.md     # Project documentation
+├── index.html   # Markup
+├── style.css    # Styling
+└── script.js    # Game logic (Minimax AI)
 ```
 
 ## Getting Started
 
-No installation or build step required.
+1. Clone or download this repository.
+2. Open `index.html` in any modern browser.
 
-Clone the repository and open `index.html` in your browser:
+## Live Demo
 
-```bash
-git clone https://github.com/shariqshahidofficial-coder/Tic-Tac-Toe.git
-cd Tic-Tac-Toe
-```
+https://tic-tac-toe-three-nu-38.vercel.app/
 
-Or run a local server:
+## License
 
-```bash
-python -m http.server 8000
-```
-
-Then visit `http://localhost:8000`.
-
-## How the AI Works
-
-The AI uses the Minimax algorithm, a decision-making algorithm commonly used in two-player turn-based games.
-
-- It simulates every possible future move from the current board state.
-- Winning moves are scored positively, losing moves negatively, and draws as zero.
-- It assumes both players play optimally and picks the move that maximizes its own score while minimizing the opponent's.
-- Because it explores the entire game tree, the AI never loses — your best possible result is a draw.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Author
 
-**Shariq Shahid**
-
-- GitHub: [@shariqshahidofficial-coder](https://github.com/shariqshahidofficial-coder)
+**Code With Shariq Official** - [GitHub](https://github.com/codewithshariqofficial)
